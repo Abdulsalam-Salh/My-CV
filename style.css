@@ -1,0 +1,162 @@
+body{
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+}
+
+.container1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.profilePicture img{
+    border-radius: 50%;
+    border: 5px solid #333;
+    margin-top: 25px;
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.personalInfo{
+    font-family: Arial, sans-serif;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.address, .phoneNumber, .socialMedia{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+hr{
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 40px 0;
+}
+
+/* For animation in h1 and h3. */
+.personalInfo h3{
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.personalInfo h1{
+    display: inline-block;
+    animation-name: sizeUp;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+/* --------------------------------------- */
+
+.container2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid black 2px;
+    padding-bottom: 40px;
+}
+
+.skills, .programmingLanguages{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.container3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.projects, .education{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes sizeUp{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}   
+
+
+
+/* Media query section */
+
+/* Mobile */
+@media (max-width: 480px) {
+    body{
+        margin: 10px;
+    }
+
+    .container1, .container2, .container3{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profilePicture img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .personalInfo{
+        text-align: center;
+    }
+
+    .address, .phoneNumber{
+        justify-content: center;
+    }
+
+    .socialMedia{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .skills, .projects{
+        border-bottom: solid 2px black;
+        padding-bottom: 10px;
+    }
+}
